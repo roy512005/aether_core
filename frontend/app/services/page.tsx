@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '../../components/Section';
-import Card from '../../components/Card';
+import HoloCard from '../../components/animations/HoloCard';
+import Reveal from '../../components/animations/Reveal';
 import styles from './page.module.css';
 
 const servicesList = [
@@ -18,10 +19,12 @@ export default function Services() {
             <Section title="Our Services" subtitle="Comprehensive digital solutions tailored to your needs." className={styles.hero}>
                 <div className={styles.grid}>
                     {servicesList.map((service, index) => (
-                        <Card key={index} className={styles.card}>
-                            <h3 className={styles.title}>{service.title}</h3>
-                            <p className={styles.desc}>{service.desc}</p>
-                        </Card>
+                        <Reveal key={index} delay={index * 0.1} width="100%">
+                            <HoloCard className={styles.card}>
+                                <h3 className={styles.title}>{service.title}</h3>
+                                <p className={styles.desc}>{service.desc}</p>
+                            </HoloCard>
+                        </Reveal>
                     ))}
                 </div>
             </Section>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from './Section';
-import Card from './Card';
+import HoloCard from './animations/HoloCard';
+import Reveal from './animations/Reveal';
 import styles from './ServicesPreview.module.css';
 
 const services = [
@@ -17,10 +18,12 @@ const ServicesPreview = () => {
         <Section title="Our Services" subtitle="Comprehensive digital solutions for your business.">
             <div className={styles.grid}>
                 {services.map((service, index) => (
-                    <Card key={index} className={styles.card}>
-                        <h3 className={styles.cardTitle}>{service.title}</h3>
-                        <p className={styles.cardDesc}>{service.desc}</p>
-                    </Card>
+                    <Reveal key={index} delay={index * 0.1} width="100%">
+                        <HoloCard className={styles.card} delay={index * 0.1}>
+                            <h3 className={styles.cardTitle}>{service.title}</h3>
+                            <p className={styles.cardDesc}>{service.desc}</p>
+                        </HoloCard>
+                    </Reveal>
                 ))}
             </div>
         </Section>

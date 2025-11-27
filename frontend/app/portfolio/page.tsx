@@ -1,7 +1,8 @@
 import React from 'react';
 import Section from '../../components/Section';
-import Card from '../../components/Card';
-import Button from '../../components/Button';
+import HoloCard from '../../components/animations/HoloCard';
+import AnimatedButton from '../../components/animations/AnimatedButton';
+import Reveal from '../../components/animations/Reveal';
 import styles from './page.module.css';
 
 const projects = [
@@ -17,15 +18,17 @@ export default function Portfolio() {
             <Section title="Our Portfolio" subtitle="Showcasing our best work and success stories." className={styles.hero}>
                 <div className={styles.grid}>
                     {projects.map((project, index) => (
-                        <Card key={index} className={styles.card}>
-                            <div className={styles.image} style={{ background: project.image }}></div>
-                            <div className={styles.content}>
-                                <span className={styles.category}>{project.category}</span>
-                                <h3 className={styles.title}>{project.title}</h3>
-                                <p className={styles.desc}>{project.desc}</p>
-                                <Button href="#" variant="outline" className={styles.link}>View Case Study</Button>
-                            </div>
-                        </Card>
+                        <Reveal key={index} delay={index * 0.1} width="100%">
+                            <HoloCard className={styles.card}>
+                                <div className={styles.image} style={{ background: project.image }}></div>
+                                <div className={styles.content}>
+                                    <span className={styles.category}>{project.category}</span>
+                                    <h3 className={styles.title}>{project.title}</h3>
+                                    <p className={styles.desc}>{project.desc}</p>
+                                    <AnimatedButton href="#" variant="outline" className={styles.link}>View Case Study</AnimatedButton>
+                                </div>
+                            </HoloCard>
+                        </Reveal>
                     ))}
                 </div>
             </Section>

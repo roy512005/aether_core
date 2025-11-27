@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from './Section';
-import Card from './Card';
+import HoloCard from './animations/HoloCard';
+import Reveal from './animations/Reveal';
 import styles from './Testimonials.module.css';
 
 const testimonials = [
@@ -13,16 +14,18 @@ const Testimonials = () => {
         <Section title="Client Testimonials" dark>
             <div className={styles.grid}>
                 {testimonials.map((t, index) => (
-                    <Card key={index} className={styles.card}>
-                        <p className={styles.quote}>"{t.quote}"</p>
-                        <div className={styles.author}>
-                            <div className={styles.avatar}></div>
-                            <div>
-                                <h4 className={styles.name}>{t.name}</h4>
-                                <p className={styles.role}>{t.role}</p>
+                    <Reveal key={index} delay={index * 0.2} width="100%">
+                        <HoloCard className={styles.card}>
+                            <p className={styles.quote}>"{t.quote}"</p>
+                            <div className={styles.author}>
+                                <div className={styles.avatar}></div>
+                                <div>
+                                    <h4 className={styles.name}>{t.name}</h4>
+                                    <p className={styles.role}>{t.role}</p>
+                                </div>
                             </div>
-                        </div>
-                    </Card>
+                        </HoloCard>
+                    </Reveal>
                 ))}
             </div>
         </Section>

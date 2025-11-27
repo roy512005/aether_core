@@ -1,7 +1,8 @@
 import React from 'react';
 import Section from './Section';
-import Card from './Card';
-import Button from './Button';
+import HoloCard from './animations/HoloCard';
+import AnimatedButton from './animations/AnimatedButton';
+import Reveal from './animations/Reveal';
 import styles from './FeaturedProjects.module.css';
 
 const projects = [
@@ -15,18 +16,22 @@ const FeaturedProjects = () => {
         <Section title="Featured Projects" subtitle="A glimpse of our best work.">
             <div className={styles.grid}>
                 {projects.map((project, index) => (
-                    <Card key={index} className={styles.card}>
-                        <div className={styles.image} style={{ background: project.image }}></div>
-                        <div className={styles.content}>
-                            <span className={styles.category}>{project.category}</span>
-                            <h3 className={styles.title}>{project.title}</h3>
-                            <Button href="/portfolio" variant="outline" className={styles.link}>View Project</Button>
-                        </div>
-                    </Card>
+                    <Reveal key={index} delay={index * 0.2} width="100%">
+                        <HoloCard className={styles.card}>
+                            <div className={styles.image} style={{ background: project.image }}></div>
+                            <div className={styles.content}>
+                                <span className={styles.category}>{project.category}</span>
+                                <h3 className={styles.title}>{project.title}</h3>
+                                <AnimatedButton href="/portfolio" variant="outline" className={styles.link}>View Project</AnimatedButton>
+                            </div>
+                        </HoloCard>
+                    </Reveal>
                 ))}
             </div>
             <div className={styles.centerAction}>
-                <Button href="/portfolio" variant="primary">View All Projects</Button>
+                <Reveal delay={0.6}>
+                    <AnimatedButton href="/portfolio" variant="primary">View All Projects</AnimatedButton>
+                </Reveal>
             </div>
         </Section>
     );

@@ -1,0 +1,4 @@
+/* Add any specific styles for animations that can't be handled by Framer Motion inline styles */
+.glow-effect {
+    pointer-events: none;
+}
