@@ -1,0 +1,85 @@
+.footer {
+    background: #020202;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 80px 0 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 60px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.heading {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.links ul,
+.social ul {
+    list-style: none;
+}
+
+.links li,
+.social li {
+    margin-bottom: 0.8rem;
+}
+
+.links a,
+.social a {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.links a:hover,
+.social a:hover {
+    color: var(--primary-color);
+}
+
+.form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    color: #fff;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.btn {
+    background: var(--primary-color);
+    color: #000;
+    border: none;
+    padding: 0 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}

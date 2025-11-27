@@ -1,0 +1,89 @@
+.hero {
+    padding-top: 120px;
+}
+
+.formWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.group label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.group input,
+.group textarea,
+.select {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 4px;
+    color: #fff;
+    font-family: var(--font-body);
+    width: 100%;
+}
+
+.select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.group input:focus,
+.group textarea:focus,
+.select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.subheading {
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.submitBtn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.status {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .formWrapper {
+        padding: 1.5rem;
+    }
+}
