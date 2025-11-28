@@ -14,6 +14,7 @@ const HoloCard: React.FC<HoloCardProps> = ({ children, className = '', delay = 0
     return (
         <motion.div
             className={`${styles.card} ${className}`}
+            style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

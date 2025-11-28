@@ -22,9 +22,40 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
     const Component = href ? motion.a : motion.button;
     const props = href ? { href } : { onClick };
 
+    const buttonRef = React.useRef<any>(null);
+
+    // Magnetic Effect
+    React.useEffect(() => {
+        const button = buttonRef.current;
+        if (!button) return;
+
+        const handleMouseMove = (e: Event) => {
+            const mouseEvent = e as MouseEvent;
+            const rect = button.getBoundingClientRect();
+            const x = mouseEvent.clientX - rect.left - rect.width / 2;
+            const y = mouseEvent.clientY - rect.top - rect.height / 2;
+
+            // Move button slightly towards cursor
+            button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        };
+
+        const handleMouseLeave = () => {
+            button.style.transform = 'translate(0px, 0px)';
+        };
+
+        button.addEventListener('mousemove', handleMouseMove);
+        button.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+            button.removeEventListener('mousemove', handleMouseMove);
+            button.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, []);
+
     return (
         // @ts-ignore
         <Component
+            ref={buttonRef}
             className={`${styles.button} ${styles[variant]} ${className}`}
             {...props}
             whileHover={{
@@ -39,7 +70,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
         >
             {children}
-            {/* Glow Trail Effect could be added here with more complex SVG overlays */}
+            {/* Glow Trail Effect */}
             <motion.div
                 className="glow-effect"
                 style={{

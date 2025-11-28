@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0a0a0a;
+}
+
+.form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: var(--font-orbitron);
+}
+
+.group {
+    margin-bottom: 1.5rem;
+}
+
+.group label {
+    display: block;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.group input {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #fff;
+}
+
+.btn {
+    width: 100%;
+    padding: 1rem;
+    background: #00f3ff;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #00c2cc;
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    margin-bottom: 1rem;
+}

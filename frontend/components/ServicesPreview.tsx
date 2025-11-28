@@ -5,9 +5,9 @@ import Reveal from './animations/Reveal';
 import styles from './ServicesPreview.module.css';
 
 const services = [
-    { title: 'Web Development', desc: 'Responsive, SEO-friendly, high-performance websites.' },
-    { title: 'App Development', desc: 'Android & iOS apps designed for performance.' },
-    { title: 'UI/UX Design', desc: 'Beautiful, intuitive interfaces that engage users.' },
+    { title: 'Web Development', desc: 'Custom, high-performance websites built with React, Next.js, and modern frameworks. We ensure responsive design, SEO optimization, and lightning-fast load times.' },
+    { title: 'App Development', desc: 'Native and cross-platform mobile applications for iOS and Android. We build intuitive, scalable apps that engage users and drive growth.' },
+    { title: 'UI/UX Design', desc: 'User-centric design that blends aesthetics with functionality. We create immersive digital experiences that delight users and elevate your brand.' },
     { title: 'Custom Software', desc: 'Tailor-made software to simplify operations.' },
     { title: 'E-Commerce', desc: 'Online stores optimized for conversion.' },
     { title: 'Digital Marketing', desc: 'Digital identities that connect and sell.' },

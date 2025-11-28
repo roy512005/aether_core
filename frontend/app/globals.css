@@ -23,6 +23,8 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--font-body);
+  cursor: none;
+  /* Custom cursor takes over */
 }
 
 a {
@@ -30,7 +32,12 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: 1px;

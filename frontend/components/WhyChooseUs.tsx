@@ -5,9 +5,9 @@ import Reveal from './animations/Reveal';
 import styles from './WhyChooseUs.module.css';
 
 const reasons = [
-    { title: 'Fast Delivery', desc: 'We respect your time and deliver on schedule.' },
-    { title: 'Dedicated Support', desc: '24/7 support to ensure your success.' },
-    { title: 'Scalable Products', desc: 'Built to grow with your business.' },
+    { title: 'Innovation First', desc: 'We stay ahead of the curve, utilizing cutting-edge technologies like AI, WebGL, and Blockchain to give you a competitive edge.' },
+    { title: 'Expert Team', desc: 'Our team consists of industry veterans, creative designers, and skilled engineers dedicated to delivering excellence in every project.' },
+    { title: 'Client-Centric', desc: 'Your success is our priority. We work collaboratively with you, ensuring transparent communication and tailored solutions.' },
     { title: '100% Satisfaction', desc: 'We don’t stop until you are happy.' },
 ];
 

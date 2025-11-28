@@ -54,6 +54,10 @@
     gap: 1.5rem;
 }
 
+.formInner {
+    width: 100% !important;
+}
+
 .group {
     display: flex;
     flex-direction: column;

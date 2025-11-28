@@ -3,6 +3,7 @@ import Section from '../../components/Section';
 import Reveal from '../../components/animations/Reveal';
 import HoloCard from '../../components/animations/HoloCard';
 import styles from './page.module.css';
+import WorkingProcess from '@/components/WorkingProcess';
 
 export default function About() {
     return (
@@ -29,32 +30,7 @@ export default function About() {
                     </Reveal>
                 </div>
             </Section>
-            <Section title="Our Team" dark>
-                <div className={styles.teamGrid}>
-                    {/* Placeholder for team members */}
-                    <Reveal delay={0.2} variant="pop">
-                        <div className={styles.teamMember}>
-                            <div className={styles.avatar}></div>
-                            <h4>Alex Johnson</h4>
-                            <p>CEO & Founder</p>
-                        </div>
-                    </Reveal>
-                    <Reveal delay={0.4} variant="pop">
-                        <div className={styles.teamMember}>
-                            <div className={styles.avatar}></div>
-                            <h4>Sarah Williams</h4>
-                            <p>Lead Designer</p>
-                        </div>
-                    </Reveal>
-                    <Reveal delay={0.6} variant="pop">
-                        <div className={styles.teamMember}>
-                            <div className={styles.avatar}></div>
-                            <h4>Michael Brown</h4>
-                            <p>CTO</p>
-                        </div>
-                    </Reveal>
-                </div>
-            </Section>
+            <WorkingProcess />
         </main>
     );
 }

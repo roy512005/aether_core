@@ -15,13 +15,14 @@ interface RevealProps {
 const Reveal: React.FC<RevealProps> = ({
     children,
     width = 'fit-content',
-    delay = 0.25,
+    delay = 0,
     direction = 'up',
     variant = 'slide',
     className = ''
 }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    // Expand viewport bottom by 200px so animation triggers BEFORE element enters view
+    const isInView = useInView(ref, { once: true, margin: "0px 0px 200px 0px" });
 
     const getVariants = () => {
         const hidden: any = { opacity: 0 };

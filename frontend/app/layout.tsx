@@ -7,25 +7,28 @@ const orbitron = Orbitron({ subsets: ["latin"], variable: '--font-orbitron' });
 
 export const metadata: Metadata = {
   title: "CyberTech Solutions",
-  description: "Building Digital Experiences That Drive Growth",
+  description: "Futuristic IT Solutions for the Modern World",
 };
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Chatbot from "../components/Chatbot";
+import CyberCursor from "../components/animations/CyberCursor";
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${orbitron.variable}`}>
+        <CyberCursor />
         <Navbar />
         {children}
+        <Chatbot />
         <Footer />
       </body>
     </html>
   );
 }
-

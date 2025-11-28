@@ -1,15 +1,28 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
+import { API_URL } from '../utils/api';
+
 const Footer = () => {
+    const [info, setInfo] = React.useState<any>(null);
+
+    React.useEffect(() => {
+        fetch(`${API_URL}/api/public/info`)
+            .then(res => res.json())
+            .then(data => setInfo(data))
+            .catch(err => console.error('Failed to fetch info', err));
+    }, []);
+
     return (
         <footer className={styles.footer}>
             <div className="container">
                 <div className={styles.grid}>
                     <div className={styles.brand}>
                         <Link href="/" className={styles.logo}>
-                            Cyber<span className="gradient-text">Tech</span>
+                            <img src="/logo.png" alt="CyberTech" style={{ height: '60px' }} />
                         </Link>
                         <p className={styles.desc}>
                             Empowering businesses through technology and design.
@@ -28,9 +41,9 @@ const Footer = () => {
                     <div className={styles.social}>
                         <h4 className={styles.heading}>Connect</h4>
                         <ul>
-                            <li><a href="#">LinkedIn</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Instagram</a></li>
+                            {info?.linkedin && <li><a href={info.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>}
+                            {info?.twitter && <li><a href={info.twitter} target="_blank" rel="noopener noreferrer">Twitter</a></li>}
+                            {info?.instagram && <li><a href={info.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></li>}
                         </ul>
                     </div>
                     <div className={styles.newsletter}>

@@ -1,10 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Section from '../../components/Section';
 import AnimatedButton from '../../components/animations/AnimatedButton';
 import Reveal from '../../components/animations/Reveal';
+import FAQ from '../../components/FAQ';
 import styles from './page.module.css';
+
+import { API_URL } from '../../utils/api';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -14,6 +17,14 @@ export default function Contact() {
         message: ''
     });
     const [status, setStatus] = useState('');
+    const [info, setInfo] = useState<any>(null);
+
+    useEffect(() => {
+        fetch(`${API_URL}/api/public/info`)
+            .then(res => res.json())
+            .then(data => setInfo(data))
+            .catch(err => console.error('Failed to fetch info', err));
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,7 +35,7 @@ export default function Contact() {
         setStatus('Sending...');
 
         try {
-            const res = await fetch('http://localhost:5000/api/contact', {
+            const res = await fetch(`${API_URL}/api/contact`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -49,9 +60,14 @@ export default function Contact() {
                         <Reveal direction="right">
                             <div className={styles.infoItem}>
                                 <h3>Office Info</h3>
-                                <p>123 Cyber Street, Tech City, TC 90210</p>
-                                <p>+1 (555) 123-4567</p>
-                                <p>hello@cybertech.com</p>
+                                <p>{info?.address || 'Loading...'}</p>
+                                <p>{info?.phone || 'Loading...'}</p>
+                                <p>{info?.email || 'Loading...'}</p>
+                                <div className={styles.socials}>
+                                    {info?.linkedin && <a href={info.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
+                                    {info?.twitter && <a href={info.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>}
+                                    {info?.instagram && <a href={info.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>}
+                                </div>
                             </div>
                         </Reveal>
                         <Reveal direction="right" delay={0.4}>
@@ -62,7 +78,7 @@ export default function Contact() {
                         </Reveal>
                     </div>
                     <div className={styles.formWrapper}>
-                        <Reveal direction="left">
+                        <Reveal direction="left" className={styles.formInner}>
                             <form className={styles.form} onSubmit={handleSubmit}>
                                 <div className={styles.group}>
                                     <label>Name</label>

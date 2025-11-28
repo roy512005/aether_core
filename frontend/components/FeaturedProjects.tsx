@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Section from './Section';
 import HoloCard from './animations/HoloCard';
@@ -5,17 +7,22 @@ import AnimatedButton from './animations/AnimatedButton';
 import Reveal from './animations/Reveal';
 import styles from './FeaturedProjects.module.css';
 
-const projects = [
-    { title: 'SmartPay', category: 'App Development', image: 'linear-gradient(45deg, #00f3ff, #bc13fe)' },
-    { title: 'EcoTrack', category: 'Web Development', image: 'linear-gradient(45deg, #00ff9d, #00f3ff)' },
-    { title: 'NeonDash', category: 'UI/UX Design', image: 'linear-gradient(45deg, #bc13fe, #ff0055)' },
-];
+import { API_URL } from '../utils/api';
 
 const FeaturedProjects = () => {
+    const [projects, setProjects] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch(`${API_URL}/api/public/projects`)
+            .then(res => res.json())
+            .then(data => setProjects(data))
+            .catch(err => console.error(err));
+    }, []);
+
     return (
         <Section title="Featured Projects" subtitle="A glimpse of our best work.">
             <div className={styles.grid}>
-                {projects.map((project, index) => (
+                {projects.slice(0, 3).map((project: any, index: number) => (
                     <Reveal key={index} delay={index * 0.2} width="100%">
                         <HoloCard className={styles.card}>
                             <div className={styles.image} style={{ background: project.image }}></div>

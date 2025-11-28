@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav className={styles.navbar}>
             <div className={`container ${styles.container}`}>
                 <Link href="/" className={styles.logo}>
-                    Cyber<span className="gradient-text">Tech</span>
+                    <img src="/logo.png" alt="CyberTech" style={{ height: '58px' }} />
                 </Link>
                 <ul className={styles.navLinks}>
                     <li><Link href="/" className={styles.link}>Home</Link></li>

@@ -1,0 +1,103 @@
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+.sidebar {
+    width: 250px;
+    background: #111;
+    padding: 2rem;
+    border-right: 1px solid #333;
+}
+
+.sidebar h2 {
+    margin-bottom: 2rem;
+    color: #00f3ff;
+}
+
+.sidebar nav button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.sidebar nav button:hover,
+.sidebar nav button.active {
+    background: rgba(0, 243, 255, 0.1);
+    color: #00f3ff;
+}
+
+.logout {
+    margin-top: 2rem !important;
+    color: #ff4444 !important;
+}
+
+.content {
+    flex: 1;
+    padding: 3rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.table th {
+    background: #1a1a1a;
+    color: #00f3ff;
+}
+
+.form {
+    max-width: 600px;
+    margin-top: 2rem;
+}
+
+.group {
+    margin-bottom: 1.5rem;
+}
+
+.group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+.group input {
+    width: 100%;
+    padding: 0.8rem;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background: #00f3ff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -6,13 +6,15 @@ import AnimatedButton from '../../components/animations/AnimatedButton';
 import Reveal from '../../components/animations/Reveal';
 import styles from './page.module.css';
 
+import { API_URL } from '../../utils/api';
+
 export default function Quote() {
     const [formData, setFormData] = useState({
+        name: '',
+        email: '',
         projectType: 'Website',
         budgetRange: 'Less than $5k',
         description: '',
-        name: '',
-        email: '',
         phone: ''
     });
     const [status, setStatus] = useState('');
@@ -37,7 +39,7 @@ export default function Quote() {
         };
 
         try {
-            const res = await fetch('http://localhost:5000/api/quote', {
+            const res = await fetch(`${API_URL}/api/quote`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),

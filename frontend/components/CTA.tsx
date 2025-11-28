@@ -3,10 +3,12 @@ import Section from './Section';
 import AnimatedButton from './animations/AnimatedButton';
 import Reveal from './animations/Reveal';
 import styles from './CTA.module.css';
+import WarpBackground from './backgrounds/WarpBackground';
 
 const CTA = () => {
     return (
         <Section className={styles.cta}>
+            <WarpBackground />
             <div className={styles.content}>
                 <Reveal variant="scale">
                     <h2 className={styles.title}>Ready to build something powerful?</h2>
