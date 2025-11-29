@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
         <Section title="Why Choose Us" dark>
             <div className={styles.grid}>
                 {reasons.map((reason, index) => (
-                    <Reveal key={index} delay={index * 0.1} width="100%">
+                    <Reveal key={index} delay={index * 0.1} className={styles.cardparent} width="100%">
                         <HoloCard className={styles.card}>
                             <div className={styles.icon}>
                                 {/* Icon placeholder */}

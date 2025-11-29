@@ -67,7 +67,7 @@ export default function Quote() {
         <main>
             <Section title="Get a Free Quote" subtitle="Tell us about your project — we’ll get back within 24 hours." className={styles.hero}>
                 <div className={styles.formWrapper}>
-                    <Reveal variant="scale">
+                    <Reveal variant="scale" width='100%'>
                         <form className={styles.form} onSubmit={handleSubmit}>
                             <div className={styles.row}>
                                 <div className={styles.group}>

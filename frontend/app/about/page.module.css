@@ -9,6 +9,14 @@
     margin-top: 3rem;
 }
 
+.cardparent {
+    min-height: 200px;
+}
+
+.cardparent>div {
+    height: 100%;
+}
+
 .card {
     background: rgba(255, 255, 255, 0.03);
     padding: 2rem;

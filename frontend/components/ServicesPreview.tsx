@@ -18,7 +18,7 @@ const ServicesPreview = () => {
         <Section title="Our Services" subtitle="Comprehensive digital solutions for your business.">
             <div className={styles.grid}>
                 {services.map((service, index) => (
-                    <Reveal key={index} delay={index * 0.1} width="100%">
+                    <Reveal key={index} delay={index * 0.1} className={styles.cardparent} width="100%">
                         <HoloCard className={styles.card} delay={index * 0.1}>
                             <h3 className={styles.cardTitle}>{service.title}</h3>
                             <p className={styles.cardDesc}>{service.desc}</p>

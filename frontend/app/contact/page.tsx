@@ -57,7 +57,7 @@ export default function Contact() {
             <Section title="Contact Us" subtitle="Let’s Discuss Your Project Today!" className={styles.hero}>
                 <div className={styles.container}>
                     <div className={styles.info}>
-                        <Reveal direction="right">
+                        <Reveal direction="right" width='100%'>
                             <div className={styles.infoItem}>
                                 <h3>Office Info</h3>
                                 <p>{info?.address || 'Loading...'}</p>
@@ -70,7 +70,7 @@ export default function Contact() {
                                 </div>
                             </div>
                         </Reveal>
-                        <Reveal direction="right" delay={0.4}>
+                        <Reveal direction="right" delay={0.4} width='100%'>
                             <div className={styles.map}>
                                 {/* Google Map Placeholder */}
                                 <div className={styles.mapPlaceholder}>Google Map Embed</div>

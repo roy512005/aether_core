@@ -19,7 +19,7 @@ export default function Services() {
             <Section title="Our Services" subtitle="Comprehensive digital solutions tailored to your needs." className={styles.hero}>
                 <div className={styles.grid}>
                     {servicesList.map((service, index) => (
-                        <Reveal key={index} delay={index * 0.1} width="100%">
+                        <Reveal key={index} delay={index * 0.1} className={styles.cardparent} width="100%">
                             <HoloCard className={styles.card}>
                                 <h3 className={styles.title}>{service.title}</h3>
                                 <p className={styles.desc}>{service.desc}</p>
