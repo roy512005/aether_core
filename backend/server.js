@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 
 dotenv.config();
 
-connectDB();
+// connectDB(); // Removed to prevent premature connection in Vercel
 
 const app = express();
 
@@ -34,7 +34,7 @@ if (require.main === module) {
         });
     });
 } else {
-    connectDB();
+    // connectDB(); // Handled by index.js for Vercel
 }
 
 module.exports = app;
