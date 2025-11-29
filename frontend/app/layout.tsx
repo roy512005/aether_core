@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const orbitron = Orbitron({ subsets: ["latin"], variable: '--font-orbitron' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cybertech-solutions.vercel.app'),
+  metadataBase: new URL('https://cybertechsol.in'),
   title: {
     default: "CyberTech Solutions | Future of IT",
     template: "%s | CyberTech Solutions"
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://cybertech-solutions.vercel.app",
+    url: "https://cybertechsol.in",
     title: "CyberTech Solutions | Future of IT",
     description: "Futuristic IT Solutions for the Modern World. Web, Mobile, AI, and Design.",
     siteName: "CyberTech Solutions",

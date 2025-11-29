@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/my-admin/',
         },
-        sitemap: 'https://cybertech-solutions.vercel.app/sitemap.xml',
+        sitemap: 'https://cybertechsol.in/sitemap.xml',
     };
 }
