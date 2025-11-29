@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000', 'https://cybertech-solutions.vercel.app'],
+    origin: ['http://localhost:3000', 'http://localhost:3001', 'http://127.0.0.1:3000', 'https://cybertech-solutions.vercel.app', 'https://cybertechsol.in'],
     credentials: true
 }));
 app.use(express.json());
